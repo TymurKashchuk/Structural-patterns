@@ -8,7 +8,8 @@ namespace Structural_patterns
 {
     public class Logger
     {
-        public void Log(string message) {
+        public void Log(string message)
+        {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("[LOG] " + message);
             Console.ResetColor();
