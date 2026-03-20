@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy\Proxy.csproj", "{BF8D1DE1-BA62-40DA-8140-598B7BD7A386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composer", "Composer\Composer.csproj", "{C13B4DD0-E162-428B-8CCD-80FD5754BA42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BF8D1DE1-BA62-40DA-8140-598B7BD7A386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF8D1DE1-BA62-40DA-8140-598B7BD7A386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF8D1DE1-BA62-40DA-8140-598B7BD7A386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13B4DD0-E162-428B-8CCD-80FD5754BA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13B4DD0-E162-428B-8CCD-80FD5754BA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13B4DD0-E162-428B-8CCD-80FD5754BA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13B4DD0-E162-428B-8CCD-80FD5754BA42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
