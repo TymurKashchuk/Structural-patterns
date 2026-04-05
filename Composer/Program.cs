@@ -1,4 +1,7 @@
-﻿namespace Composer
+﻿using Composer.Core;
+using Composer.Iterator;
+
+namespace Composer
 {
     internal class Program
     {
@@ -21,6 +24,21 @@
             Console.WriteLine("\nInnerHTML:");
             Console.WriteLine(ul.InnerHTML());
             Console.WriteLine($"\nChildren count: {ul.ChildrenCount}");
+
+            
+            Console.WriteLine("\nDFS (глибина)");
+            var dfs = new DepthFirstIterator(ul);
+            while (dfs.HasNext())
+            {
+                Console.WriteLine(dfs.Next().OuterHTML());
+            }
+
+            Console.WriteLine("\nBFS (ширина)");
+            var bfs = new BreadthFirstIterator(ul);
+            while (bfs.HasNext())
+            {
+                Console.WriteLine(bfs.Next().OuterHTML());
+            }
         }
     }
 }

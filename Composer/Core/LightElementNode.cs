@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Composer
+namespace Composer.Core
 {
     public class LightElementNode : LightNode
     {
@@ -33,6 +33,10 @@ namespace Composer
 
         public int ChildrenCount => _children.Count;
 
+        public LightNode GetChild(int index)
+        {
+            return _children[index];
+        }
         public override string InnerHTML()
         {
             StringBuilder sb = new StringBuilder();
