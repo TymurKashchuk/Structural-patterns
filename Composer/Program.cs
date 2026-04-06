@@ -1,6 +1,7 @@
 ﻿using Composer.Core;
 using Composer.Iterator;
 using Composer.Command;
+using Composer.State;
 
 namespace Composer
 {
@@ -59,6 +60,18 @@ namespace Composer
 
             Console.WriteLine("\nafter undo:");
             Console.WriteLine(ul.OuterHTML());
+
+            Console.WriteLine("\nSTATE TEST");
+
+            ul.SetRenderState(new PrettyState());
+
+            Console.WriteLine("\nPretty HTML:");
+            Console.WriteLine(ul.Render());
+
+            ul.SetRenderState(new MinifiedState());
+
+            Console.WriteLine("\nMinified HTML:");
+            Console.WriteLine(ul.Render());
         }
     }
 }
