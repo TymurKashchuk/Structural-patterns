@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Composer.Visitor;
 
 namespace Composer.Core
 {
@@ -22,6 +23,10 @@ namespace Composer.Core
         public override string InnerHTML()
         {
             return _text;
+        }
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.VisitText(this);
         }
     }
 }
