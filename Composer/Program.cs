@@ -3,6 +3,7 @@ using Composer.Iterator;
 using Composer.Command;
 using Composer.State;
 using Composer.TemplateMethod;
+using Composer.Visitor;
 
 namespace Composer
 {
@@ -73,6 +74,14 @@ namespace Composer
 
             Console.WriteLine("\nMinified HTML:");
             Console.WriteLine(ul.Render());
+
+            Console.WriteLine("\nVISITOR TEST");
+
+            var visitor = new TagCountVisitor();
+
+            ul.Accept(visitor);
+
+            Console.WriteLine($"Tag count: {visitor.TagCount}");
         }
     }
 }
