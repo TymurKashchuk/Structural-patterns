@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Composer.State;
 
 namespace Composer.Core
 {
@@ -13,6 +14,7 @@ namespace Composer.Core
         private bool _selfClosing;
         private List<string> _classes = new List<string>();
         private List<LightNode> _children = new List<LightNode>();
+        private IRenderState _renderState;
 
         public LightElementNode(string tagName, string displayType, bool selfClosing)
         {
@@ -41,6 +43,11 @@ namespace Composer.Core
         public void RemoveChild(LightNode node)
         {
             _children.Remove(node);
+        }
+
+        public void SetRenderState(IRenderState state)
+        {
+            _renderState = state;
         }
         public override string InnerHTML()
         {
@@ -74,6 +81,13 @@ namespace Composer.Core
             }
 
             return sb.ToString();
+        }
+
+        public string Render() {
+            if (_renderState == null)
+                return OuterHTML();
+
+            return _renderState.Render(this);
         }
     }
 }
