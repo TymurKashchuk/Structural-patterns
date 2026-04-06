@@ -1,5 +1,6 @@
 ﻿using Composer.Core;
 using Composer.Iterator;
+using Composer.Command;
 
 namespace Composer
 {
@@ -39,6 +40,25 @@ namespace Composer
             {
                 Console.WriteLine(bfs.Next().OuterHTML());
             }
+
+            Console.WriteLine("\nCOMMAND TEST");
+
+            var invoker = new CommandInvoker();
+
+            var newLi = new LightElementNode("li", "block", false);
+            newLi.AddChild(new LightTextNode("Item 3"));
+
+            var addCommand = new AddChildCommand(ul, newLi);
+
+            invoker.Execute(addCommand);
+
+            Console.WriteLine("after execute:");
+            Console.WriteLine(ul.OuterHTML());
+
+            invoker.Undo();
+
+            Console.WriteLine("\nafter undo:");
+            Console.WriteLine(ul.OuterHTML());
         }
     }
 }

@@ -37,6 +37,11 @@ namespace Composer.Core
         {
             return _children[index];
         }
+
+        public void RemoveChild(LightNode node)
+        {
+            _children.Remove(node);
+        }
         public override string InnerHTML()
         {
             StringBuilder sb = new StringBuilder();
