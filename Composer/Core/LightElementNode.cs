@@ -9,7 +9,7 @@ namespace Composer.Core
 {
     public class LightElementNode : LightNode
     {
-        private string _tagName;
+        protected string _tagName;
         private string _displayType;
         private bool _selfClosing;
         private List<string> _classes = new List<string>();

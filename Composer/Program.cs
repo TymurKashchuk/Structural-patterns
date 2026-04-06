@@ -2,6 +2,7 @@
 using Composer.Iterator;
 using Composer.Command;
 using Composer.State;
+using Composer.TemplateMethod;
 
 namespace Composer
 {
@@ -9,7 +10,7 @@ namespace Composer
     {
         static void Main(string[] args)
         {
-            var ul = new LightElementNode("ul", "block",false);
+            var ul = new LifecycleElementNode("ul", "block",false);
             ul.AddClass("list");
 
             var li1 = new LightElementNode("li", "block", false);
